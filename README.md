@@ -6,7 +6,6 @@
   the solution of my leetcode
   <br>
 </h1>
-python
 
 
 
