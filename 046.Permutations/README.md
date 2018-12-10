@@ -1,4 +1,4 @@
-## 046.Jump Game II
+## 046.Permutations
 
 ### 题目描述
 
