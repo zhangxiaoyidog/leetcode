@@ -55,6 +55,7 @@
 
 
 ****
+<font color=gray size=72>color=gray</font>
 
 1  2  3　　　 　　 9  6  3　　　　　  7  4  1
 
