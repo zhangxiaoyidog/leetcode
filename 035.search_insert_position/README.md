@@ -74,7 +74,7 @@ class Solution:
             if target <= nums[mid]:
                 r = mid
             else:
-                l += 1
+                l = mid + 1
         return l
 ```
 
