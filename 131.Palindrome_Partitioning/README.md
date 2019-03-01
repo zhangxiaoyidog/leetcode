@@ -21,7 +21,7 @@
 
 ### 解答
 
-​	这道题我是做了[132](https://github.com/zhangxiaoyidog/leetcode/blob/master/132.Palindrome_Partitioning II/README.md)题才有的思路，首先利用动态规划求出第i个位置到第j个位置是否为回文串，然后使用回溯算法，递归寻找符合的分割方案，也就是使用之前的模板。具体细节看代码。
+​	这道题我是做了[132](https://github.com/zhangxiaoyidog/leetcode/blob/master/132.Palindrome_Partitioning%20II/README.md)题才有的思路，首先利用动态规划求出第i个位置到第j个位置是否为回文串，然后使用回溯算法，递归寻找符合的分割方案，也就是使用之前的模板。具体细节看代码。
 
 ```python
 class Solution:
