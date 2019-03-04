@@ -107,7 +107,7 @@ class Solution:
 
 + 结果b = (b ^ c) & -a
 
-+ 结果a = (a ^ c) & -b
++ 结果a = a & ~c & (~结果b) + ~a & c & (~结果b)  = (~结果b) & (a^c)
 
 
 
