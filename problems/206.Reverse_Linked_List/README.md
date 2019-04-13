@@ -1,4 +1,4 @@
-## 206.Isomorphic Strings
+## 206.Reverse Linked List
 
 ## 题目描述
 
@@ -67,4 +67,4 @@ class Solution:
 ```
 
 - 时间复杂度：$O(n)$
-- 空间复杂度：$O(1)$ 	
+	 空间复杂度：$O(1)$ 	
