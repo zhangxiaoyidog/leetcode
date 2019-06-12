@@ -72,19 +72,6 @@ M             1000
 - 分别讨论当前位（从高位到低位）的大小的不同情况：以x为例。
 - 当x<4的情况；当x == 4的情况；当x>4 & x<9的情况；以及当x == 9的情况。
 
-class Solution:
-    def intToRoman(self, num):
-        """
-        :type num: int
-        :rtype: str
-        """
-        roman = ['M','D','C','L','X','V','I']
-        value = [1000,500,100,50,10,5,1]
-        res = ''
-        for i in range(0,7,2):
-            x = num // value[i]
-            
-
 ```python
 class Solution:
     def intToRoman(self, num):
