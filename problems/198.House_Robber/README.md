@@ -35,7 +35,6 @@ class Solution:
     def rob(self, nums: List[int]) -> int:
 
         return self.rob_id(0,nums)
-
         
     def rob_id(self,idx,nums):
         # 分为偷和不偷两种情况
@@ -52,7 +51,7 @@ class Solution:
 
 ![](https://note.youdao.com/yws/api/personal/file/WEBb52973f52a4977bedc09c59a14306f75?method=download&shareKey=4aaca3587e1f91396dd6194463888b2b)
 
-​	
+
 
 ```python
 class Solution:
@@ -78,7 +77,7 @@ class Solution:
 
 ### 解答3
 
-​	第三种就是使用动态规划了，其实一开始我就在思考能不能用动态规划来做，但是这个不同于之前常规的动态规划，这里需要的定义两个状态，也就是说一个二位的列表，dp\[i][0]表示第i个屋不偷获得的最大现金，dp\[i][0]表示第i个屋偷获得的最大现金。
+​	第三种就是使用动态规划了，其实一开始我就在思考能不能用动态规划来做，但是这个不同于之前常规的动态规划，这里需要的定义两个状态，也就是说一个二位的列表，dp\[0][i]表示第i个屋不偷获得的最大现金，dp\[1][i]表示第i个屋偷获得的最大现金。
 
 ```python
 class Solution:
