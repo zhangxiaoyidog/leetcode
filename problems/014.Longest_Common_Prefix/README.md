@@ -43,7 +43,7 @@ class Solution:
         if len(strs) == 0:
             return ""
         strs_lens = [len(s) for s in strs]
-        min_len = min(strs_lens = [len(s) for s in strs])
+        min_len = min(strs_lens)
         flag = 0
         count = 0
         for i in range(min_len):
