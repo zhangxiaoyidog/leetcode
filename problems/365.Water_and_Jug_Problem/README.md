@@ -1,4 +1,4 @@
-## 357.Water and Jug Problem
+## 367.Water and Jug Problem
 
 ### 题目描述
 
