@@ -45,7 +45,7 @@ class Solution:
                 if nums[i]%nums[j]==0 and dp[i]<dp[j]+1:
                     dp[i] = dp[j]+1
                     pre[i] = j
-        print(dp)
+        # print(dp)
         max_ix = dp.index(max(dp))
         while max_ix!=-1:
             res.append(nums[max_ix])
