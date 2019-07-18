@@ -37,7 +37,7 @@ class Solution:
         col_begin = 0
         col_end = n-1
         value = 1
-        # 由于是矩阵，只需要判断一个维度就行
+        # 由于是正方形矩阵，只需要判断一个维度就行
         while row_begin<=row_end:
             for i in range(col_begin,col_end + 1):
                 matrix[row_begin][i] = value
