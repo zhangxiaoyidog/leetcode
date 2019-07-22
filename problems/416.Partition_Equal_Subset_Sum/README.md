@@ -110,6 +110,7 @@ class Solution:
         dp = [0]*(target+1)
         for i in range(target+1):
             if nums[0]==i:
+                # i越来越大，后面肯定不会等于nums[0]
                 dp[i]=1
                 break
         for i in range(1,len(nums)):
@@ -118,10 +119,10 @@ class Solution:
                 if j >= nums[i]:
                     dp[j] = dp[j] or dp[j - nums[i]]
                 else:
+                     # j越来越小，等同于直接用了上一轮的数据，就不用判断了
                     break
                     # dp[i][j] = dp[i - 1][j]
         # print(dp)
         return dp[-1]==1
-    
 ```
 
