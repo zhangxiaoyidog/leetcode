@@ -58,6 +58,22 @@ class Solution:
 ### 解答２
 
 ```python
-#TODO 迭代(非递归)
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        if root==None:
+            return []
+        
+        stack = []
+        res = []
+        first = 1
+        while root or stack:
+            while root:
+                stack.append(root)
+                root = root.left
+            if stack:
+                cur = stack.pop()
+                res.append(cur.val)
+                root = cur.right
+        return res
 ```
 
