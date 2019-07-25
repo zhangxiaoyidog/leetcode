@@ -57,7 +57,7 @@ class Solution:
             
             for num in nums:
                 s.add(mask & num)
-            # 贪心认为这一位可以是1，然后去做亦或
+            # 贪心认为这一位可以是1，然后去做异或
             temp = res | (1<<i)
             
             for prefix in s:

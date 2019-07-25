@@ -91,20 +91,16 @@ class Solution:
         """
         if root == None:
             return True
-        # 递归判断左子树和右子树
         left = self.isValidBST(root.left)
         right = self.isValidBST(root.right)
         
-        # 遍历左子树的值
         if root.left!=None:
             if not self.left_isvalid(root.left,root.val):
                 return False
-        # 遍历右子树的值
         if root.right!=None:
             if not self.right_isvalid(root.right,root.val):
                 return False
-        return True
-    
+        return left and right
     
     def left_isvalid(self,node,val):
         if node == None:
