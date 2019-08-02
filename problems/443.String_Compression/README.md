@@ -77,6 +77,7 @@ class Solution:
         start = 0
         this_char = 0
         count = 1
+
         while guard < len(chars):
             if chars[guard] == chars[this_char]:
                 count += 1
