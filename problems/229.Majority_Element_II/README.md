@@ -54,11 +54,13 @@ class Solution:
             if num ==y:
                 cy+=1
         res = []
+        
         if cx>len(nums)//3:
             res.append(x)
         if cy>len(nums)//3:
             res.append(y) 
-            
+        if x==y and len(res)>0:
+            return [x]
         return res
 ```
 
