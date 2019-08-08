@@ -84,3 +84,38 @@ class Solution:
 
 - 时间复杂度：$O(logn)$
 - 空间复杂度：$O(1)$
+
+
+
+### 解答3 
+
+​	今天在面试作业帮遇到了这个题，我答的是第二种，结果面试官说不可以这样，经过提示才知道这种解法，实在是很难受，刷题要认真。
+
+​	其实不用两遍二分查找，每次得到mid后，先判断l-mid是否有序，假如有序，分两种情况，target在左边和在右边，假如右边有序，也是同样的两种情况。
+
+```python
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        if len(nums)==0:
+            return -1
+        l, r = 0, len(nums)-1
+        while l<r:
+            mid = l + (r - l)//2
+            # 左边有序
+            if nums[mid]>=nums[l]:
+                # target在左边
+                if nums[l]<= target <=nums[mid]:
+                    r = mid
+                else:
+                    l = mid + 1
+            else:
+                # target在左边
+                if nums[mid]<= target <=nums[r]:
+                    l = mid
+                else:
+                    r = mid -1
+        return l if nums[l]==target else -1
+```
+
+- 时间复杂度：$O(logn)$
+- 空间复杂度：$O(1)$
