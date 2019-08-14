@@ -65,7 +65,6 @@ class Solution:
         
         stack = []
         res = []
-        first = 1
         while root or stack:
             while root:
                 stack.append(root)
