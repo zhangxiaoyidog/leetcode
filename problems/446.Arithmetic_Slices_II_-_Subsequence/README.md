@@ -121,9 +121,9 @@ class Solution:
             for j in range(i):
                 diff = A[i]-A[j]
                 dp[i][diff] = dp[i].get(diff, 0)+1
-                if i > 2 and diff in dp[j]:
+                if i > 1 and diff in dp[j]:
                     dp[i][diff]+=dp[j][diff]
-                    res+=1
+                    res+=dp[j][diff]
         return res
 ```
 
