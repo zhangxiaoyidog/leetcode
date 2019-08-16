@@ -37,7 +37,7 @@ class Solution:
         :rtype: List[List[int]]
         """
         # 使用dfs求解
-        nums.sort()
+        # nums.sort()
         ans = []
         temp = []
         self.dfs_subsets(ans,temp,nums,0)
