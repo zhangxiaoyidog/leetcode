@@ -45,5 +45,35 @@ class Solution:
 ```
 
 - 时间复杂度：$O(n^2)$
+- 空间复杂度：$O(n)$ 
+
+
+
+### 解答2
+
+​	这道题题目中说可以把时间复杂度降低到O(nlogn)，也就是说中间可能会用到二分搜索，可是怎么使用二分呢，使用二分的条件就是必须要有一个有序数组，所以我们可以新建一个数组cell，用于保存最长上升子序列，遇到一个数字，就对cell进行二分搜索，插入到相应位置，如果cell中的数字都比它小，直接插到最后，否则用它替换比他大的元素中最小的那个，为什么要这样呢？因为cell中存储的是最长上升子序列，替换只是为了后面的序列的更新，并没有改变长度，所以最后必然会得到最新的最长上升子序列。
+
+```python
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        if len(nums)<2:
+            return len(nums)
+        cell = [nums[0]]
+        for num in nums[1:]:
+            if num>cell[-1]:
+                cell.append(num)
+                continue
+            l,r = 0,len(cell)-1
+            while l<r:
+                mid = l + (r - l)//2
+                if cell[mid]<num:
+                    l = mid + 1
+                else:
+                    r= mid
+            cell[l] = num
+        return len(cell)
+```
+
+- 时间复杂度：$O(n*logn)$
 - ​空间复杂度：$O(n)$ 
 

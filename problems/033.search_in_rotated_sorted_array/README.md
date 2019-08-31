@@ -50,20 +50,7 @@ class Solution:
                 find_r+=b
         return find_r if find_r != -1 else -1
 
-    def binary_search(self, nums, target):
-        l = 0
-        r = len(nums) - 1
-        flag = 0
-        while l <= r:
-            mid = (l + r) // 2
-            if nums[mid] > target:
-                r = mid - 1
-            elif nums[mid] < target:
-                l = mid + 1
-            else:
-                flag = 1
-                break
-        return mid if flag == 1 else -1
+
 
     def find_boundary(self, s):
         """

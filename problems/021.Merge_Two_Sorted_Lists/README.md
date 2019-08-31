@@ -40,7 +40,7 @@ class Solution:
             else:
                 l_temp.next = l2
                 l2 = l2.next
-            l_temp = l_temp .next
+            l_temp = l_temp.next
         
         if l1 != None:
             l_temp.next = l1

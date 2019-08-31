@@ -85,7 +85,7 @@ class Solution:
         :type x: int
         :rtype: bool
         """
-        flag =x
+        flag = x
         if x<0 or(x !=0 and x % 10==0):
             return False
         r = 0
