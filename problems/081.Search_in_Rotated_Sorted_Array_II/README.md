@@ -22,7 +22,7 @@
 输出: false
 ```
 
-### 解答
+### 解答1
 
 ​	 首先这道题和33题很相似，33题我们的解法是先用一个二分搜索去寻找分界点，然后再用两个二分搜索分段查找target，但是这里的nums可能包含重复元素，在一些特殊情况使用二分搜索是找不到分界点的，这里读者可以自己尝试一下，所以我只能先使用顺序遍历找到分界点，然后在分段使用二分查找。
 
@@ -65,3 +65,44 @@ class Solution:
 
 - 时间复杂度：$O(n)$
 - 空间复杂度：$O(1)$ 
+
+
+
+### 解答2
+
+​	还是和第33题目一样的解法，一遍二分搜索解决。
+
+```python
+class Solution:
+    def search(self, nums: List[int], target: int) -> bool:
+        if len(nums)==0:
+            return False
+        l, r = 0, len(nums)-1
+        while l<r:
+            mid = l + (r - l) // 2
+            # 左边有序
+            if nums[mid]>nums[l]:
+                # target在左边
+                if nums[l]<= target <=nums[mid]:
+                    r = mid
+                else:
+                    l = mid + 1
+            elif nums[mid]<nums[l]:
+                # target在右边
+                if nums[mid]<= target <=nums[r]:
+                    l = mid
+                else:
+                    r= mid-1
+            else:
+                # [1,3,1,1,1] 3
+                if nums[l]==target:
+                    return True
+                l+=1
+                    
+        # 后处理，夹逼以后，还要判断一下，是不是 target
+        return nums[l] == target 
+```
+
+- 时间复杂度：$O(logn)$
+- 空间复杂度：$O(1)$ 
+

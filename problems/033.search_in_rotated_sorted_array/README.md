@@ -96,7 +96,7 @@ class Solution:
                 else:
                     l = mid + 1
             else:
-                # target在左边
+                # target在右边
                 if nums[mid]<= target <=nums[r]:
                     l = mid
                 else:
