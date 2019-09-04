@@ -44,7 +44,7 @@ class Solution:
         :type obstacleGrid: List[List[int]]
         :rtype: int
         """
-        # dp[i][j]表示到达这个格子的不同的路径，它和dp[i-1][j]和dp[i][j-1]
+        # dp[i][j]表示到达这个格子的不同的路径，它取决于dp[i-1][j]和dp[i][j-1]
         # 边界
         m = len(obstacleGrid)
         n = len(obstacleGrid[0])
