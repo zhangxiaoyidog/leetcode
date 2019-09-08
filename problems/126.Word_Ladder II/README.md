@@ -54,6 +54,8 @@ wordList = ["hot","dot","dog","lot","log"]
 ```python
 # coding=utf-8
 
+# coding=utf-8
+
 class Solution:
     def findLadders(self, beginWord: 'str', endWord: 'str', wordList: 'List[str]') -> 'List[List[str]]':
         """
@@ -67,11 +69,11 @@ class Solution:
         res = []
         temp_list = [beginWord]
         # 先bfs得到距离字典
-        distance = self.bfs_distance(beginWord, wordSet)
+        distance = self.bfs_distance(endWord,beginWord, wordSet)
 
         return self.dfs(beginWord, endWord, wordSet, temp_list, distance, res)
 
-    def bfs_distance(self, beginWord, wordSet):
+    def bfs_distance(self, beginWord,endWord, wordSet):
         """
         得到beginWord和其他节点的距离
         :return:
@@ -83,29 +85,38 @@ class Solution:
             word = queue[0]
             queue.pop(0)
 
-            nextWords = self.nextWordList(word, wordSet)
+            nextWords = self.nextWordList(word,endWord, wordSet)
             for nextword in nextWords:
                 if nextword not in distance:
                     distance[nextword] = distance[word] + 1
                     queue.append(nextword)
+        
         return distance
 
     def dfs(self, beginWord, endWord, wordSet, temp_list, distance, res):
         """
         深度遍历得到所有的结果
+        :param beginWord:
+        :param endWord:
+        :param wordSet:
+        :param temp_list:
+        :param distance:
+        :param res:
+        :return:
         """
 
         if beginWord == endWord:
             res.append(list(temp_list))
-        next_words = self.nextWordList(beginWord, wordSet)
+
+        next_words = self.nextWordList(beginWord,endWord, wordSet)
         for next_word in next_words:
-            if distance.get(next_word, -2) - 1 == distance[beginWord]:
+            if distance[next_word] + 1 == distance[beginWord]:
                 temp_list.append(next_word)
                 self.dfs(next_word, endWord, wordSet, temp_list, distance, res)
                 temp_list.remove(next_word)
         return res
 
-    def nextWordList(self, word, wordSet):
+    def nextWordList(self, word,endWord, wordSet):
         res_list = []
         all_lowers = 'abcdefghijklmnopqrstuvwxyz'
         for i in range(len(word)):
@@ -114,8 +125,9 @@ class Solution:
                 if lower != new_word[i]:
                     new_word[i] = lower
                     new_word = ''.join(new_word)
-                    if new_word in wordSet:
+                    if new_word in wordSet or new_word==endWord:
                         res_list.append(new_word)
+                        # del wordSet[new_word]
         return res_list
 ```
 
